@@ -11,19 +11,25 @@
             font-family: monospace;
             margin: 20px;
             padding: 0;
+            display: flex;              /* Enables flexbox layout */
+            flex-direction: column;     /* Stacks content vertically */
+            align-items: center;        /* Aligns content horizontally to center */
         }
         
         h1 {
+            width: calc(100% - 40px);   /* Full width with padding considered */
             padding: 0 20px;
             margin-top: 0;
             margin-bottom: 20px;
         }
         
         p {
+            width: calc(100% - 40px);   /* Consistent width with other elements */
             font-size: 16px;
             padding: 0 20px;
             margin-top: 0;
             margin-bottom: 20px;
+            text-align: justify;        /* Ensures text is neatly justified */
         }
         
         .content-link, a {
@@ -31,32 +37,48 @@
             text-decoration: none;
             font-size: 100%; /* adaptive font size */
             display: block;
-            margin: 10px 20px;
+            margin: 10px 0;
             padding: 10px;
-            width: calc(100% - 80px); /* Full width minus padding */
+        }
+        
+        .main-content {
+            display: flex;              /* Uses flexbox to layout children side by side */
+            width: calc(100% - 40px);   /* Width adjusted for padding */
+            align-items: start;         /* Aligns items at their start line */
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;     /* Stacks links vertically */
+            padding: 0 20px;
         }
         
         img {
             display: block;
-            margin: 20px auto;
             width: 100%;
             max-width: 300px; /* max-width for responsive design */
+            height: auto;
         }
-        
+
         /* Media Queries for Responsiveness */
         @media (max-width: 600px) {
-            body {
-                margin: 10px;
+            body, .main-content {
+                flex-direction: column; /* Stacks items vertically on small screens */
+                align-items: center;
             }
-        
-            h1, p {
+
+            .links {
+                order: 1;             /* Puts links below the image on small screens */
                 padding: 0 10px;
             }
-        
+
+            h1, p {
+                width: calc(100% - 20px);  /* Adjusts width on smaller screens */
+                padding: 0 10px;
+            }
+
             .content-link, a {
-                margin: 10px 10px;
-                padding: 10px;
-                width: calc(100% - 40px); /* Adjust width to new padding */
+                margin: 5px 0;
             }
         }
     </style>
@@ -67,12 +89,16 @@
     <h1>Welcome to My Personal Webpage!</h1>
     <p>I am currently pursuing a Bachelor of Science in Industrial Engineering with a specialization in Information Engineering at the Rhine-Waal University of Applied Sciences. My bachelor thesis focuses on econometrics, specifically investigating the impact of economic freedom on economic growth within the European Economic Area. Additionally, I am working towards earning the Google Advanced Data Analytics Professional Certificate to further enhance my data analysis capabilities.</p>
     <p>Please feel free to contact me through any of the provided links or directly via my email at <u>Cosroe@proton.me</u>.</p>
-
-    <p><a href="https://www.linkedin.com/in/k-hashemi" class="content-link">LinkedIn</a></p>
-    <p><a href="https://github.com/Cosroe" class="content-link">GitHub</a></p>
-    <p><a href="https://www.kaggle.com/cosroe" class="content-link">Kaggle</a></p>
-    <p><a href="CV_public.pdf" class="content-link" target="_blank">CV</a></p>
-    <img src="webpage.JPG" alt="A portrait of myself" style="display: block; margin: auto; width: 100%; max-width: 300px; height: auto;">
+    
+    <div class="main-content">
+        <img src="webpage.JPG" alt="A portrait of myself">
+        <div class="links">
+            <a href="https://www.linkedin.com/in/k-hashemi" class="content-link">LinkedIn</a>
+            <a href="https://github.com/Cosroe" class="content-link">GitHub</a>
+            <a href="https://www.kaggle.com/cosroe" class="content-link">Kaggle</a>
+            <a href="CV_public.pdf" class="content-link" target="_blank">CV</a>
+        </div>
+    </div>
 
 </body>
 
