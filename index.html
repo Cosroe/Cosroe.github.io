@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Webpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            margin: 20px;
+            padding: 0;
+        }
+        
+        h1 {
+            padding: 0 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            font-size: 16px;
+            padding: 0 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .content-link, a {
+            color: white;
+            text-decoration: none;
+            font-size: 100%; /* adaptive font size */
+            display: block;
+            margin: 10px 20px;
+            padding: 10px;
+            width: calc(100% - 80px); /* Full width minus padding */
+        }
+        
+        img {
+            display: block;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 300px; /* max-width for responsive design */
+        }
+        
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+        
+            h1, p {
+                padding: 0 10px;
+            }
+        
+            .content-link, a {
+                margin: 10px 10px;
+                padding: 10px;
+                width: calc(100% - 40px); /* Adjust width to new padding */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Welcome to My Personal Webpage!</h1>
+    <p>I am currently pursuing a Bachelor of Science in Industrial Engineering with a specialization in Information Engineering at the Rhine-Waal University of Applied Sciences. My bachelor thesis focuses on econometrics, specifically investigating the impact of economic freedom on economic growth within the European Economic Area. Additionally, I am working towards earning the Google Advanced Data Analytics Professional Certificate to further enhance my data analysis capabilities.</p>
+    <p>Please feel free to contact me through any of the provided links or directly via my email at <u>Cosroe@proton.me</u>.</p>
+
+    <p><a href="https://www.linkedin.com/in/k-hashemi" class="content-link">LinkedIn</a></p>
+    <p><a href="https://github.com/Cosroe" class="content-link">GitHub</a></p>
+    <p><a href="https://www.kaggle.com/cosroe" class="content-link">Kaggle</a></p>
+    <p><a href="CV.pdf" class="content-link" target="_blank">CV</a></p>
+    <img src="webpage.JPG" alt="A portrait of myself" style="display: block; margin: auto; width: 100%; max-width: 300px; height: auto;">
+
+</body>
+
+</html>
